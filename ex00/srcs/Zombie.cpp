@@ -6,7 +6,7 @@
 /*   By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 23:37:41 by mmizuno           #+#    #+#             */
-/*   Updated: 2022/04/09 08:52:23 by mmizuno          ###   ########.fr       */
+/*   Updated: 2022/04/09 09:32:40 by mmizuno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,11 @@ Zombie::~Zombie()
 
 // ======================== public method (announce) ======================== //
 
+/*!
+** @breif   announce message
+** @param   none
+** @return  none
+*/
 void    Zombie::announce(void)
 {
     std::cout << Zombie::_name << ": BraiiiiiiinnnzzzZ..." << std::endl;
