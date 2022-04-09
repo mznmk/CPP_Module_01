@@ -6,13 +6,13 @@
 #    By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/08 23:32:38 by mmizuno           #+#    #+#              #
-#    Updated: 2022/04/09 12:22:47 by mmizuno          ###   ########.fr        #
+#    Updated: 2022/04/09 19:09:15 by mmizuno          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # ================================= Variable ================================= #
 
-NAME				= ZombieHorde
+NAME				= zombiehorde
 
 INC_DIR				= ./incs/
 SRC_DIR				= ./srcs/
