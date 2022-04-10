@@ -6,7 +6,7 @@
 #    By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/08 23:32:38 by mmizuno           #+#    #+#              #
-#    Updated: 2022/04/09 19:07:52 by mmizuno          ###   ########.fr        #
+#    Updated: 2022/04/10 20:22:52 by mmizuno          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,12 @@ SRCS				= $(addprefix $(SRC_DIR), $(SRC_NAME))
 OBJS				= $(SRCS:.cpp=.o)					  
 
 CC					= clang++
-CFLAGS				= -Wall -Wextra -Werror -std=c++98 #-g -fsanitize=leak
+CFLAGS				= -Wall -Wextra -Werror -std=c++98
+ifdef CHECKLEAK
+	CFLAGS			+= -g -fsanitize=leak
+else ifdef CHECKADDRESS
+	CFLAGS			+= -g -fsanitize=address
+endif
 INCDIR				= -I $(INC_DIR)
 
 RM					= rm -f
@@ -60,6 +65,14 @@ $(NAME):			$(OBJS)
 					@echo "$(FNT_BOLD)$(CLR_YELLOW)[ $(NAME) successfully compiled !! ]$(ESC_RESET)"
 
 all:				$(NAME)
+
+leak:
+					@make CHECKLEAK=1
+					@echo "$(FNT_BOLD)$(CLR_GREEN)[ memory leak check mode : ON ]$(ESC_RESET)"
+
+address:
+					@make CHECKADDRESS=1
+					@echo "$(FNT_BOLD)$(CLR_GREEN)[ memory address check mode : ON ]$(ESC_RESET)"
 
 # ------------------------------ clean / fclean ------------------------------ #
 
