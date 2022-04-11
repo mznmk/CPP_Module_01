@@ -6,7 +6,7 @@
 #    By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/08 23:32:38 by mmizuno           #+#    #+#              #
-#    Updated: 2022/04/12 05:39:31 by mmizuno          ###   ########.fr        #
+#    Updated: 2022/04/12 06:30:37 by mmizuno          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -93,8 +93,6 @@ test:
 					-@./harl WARNING
 					-@./harl ERROR
 					@echo "$(FNT_BOLD)$(CLR_MAGENTA)[NG 8 pattern]$(ESC_RESET)"
-					-@./harl
-					-@./harl DEBUG DEBUG
 					-@./harl debug
 					-@./harl info
 					-@./harl warning

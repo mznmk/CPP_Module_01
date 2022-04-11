@@ -10,8 +10,6 @@ echo "$FNT_BOLD$CLR_MAGENTA[OK 4 pattern]$ESC_RESET"
 ./harl WARNING
 ./harl ERROR
 echo "$FNT_BOLD$CLR_MAGENTA[NG 8 pattern]$ESC_RESET"
-./harl
-./harl DEBUG DEBUG
 ./harl debug
 ./harl info
 ./harl warning
