@@ -6,7 +6,7 @@
 #    By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/08 23:32:38 by mmizuno           #+#    #+#              #
-#    Updated: 2022/04/10 20:22:29 by mmizuno          ###   ########.fr        #
+#    Updated: 2022/04/12 04:26:13 by mmizuno          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ NAME				= replace
 
 INC_DIR				= ./incs/
 SRC_DIR				= ./srcs/
-SRC_NAME			= replace.cpp \
+SRC_NAME			= Replace.cpp \
 					  main.cpp
 SRCS				= $(addprefix $(SRC_DIR), $(SRC_NAME))
 OBJS				= $(SRCS:.cpp=.o)					  

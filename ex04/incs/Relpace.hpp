@@ -6,7 +6,7 @@
 /*   By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/10 08:52:12 by mmizuno           #+#    #+#             */
-/*   Updated: 2022/04/12 02:31:01 by mmizuno          ###   ########.fr       */
+/*   Updated: 2022/04/12 03:31:09 by mmizuno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,6 @@
 // ================================= const ================================== //
 
 # define ERR_MSG_READ_FILE      "ERROR: could not open file"
-
-// ================================ library ================================= //
-
-# include <fstream>
-# include <sstream>
-# include <string>
-# include <iostream>
 
 // --------------------------------- color ---------------------------------- //
 
@@ -40,6 +33,13 @@
 # define CLR_CYAN       "\033[38;5;06m"
 # define CLR_WHITE      "\033[38;5;07m"
 # define CLR_PINK       "\033[38;5;213m"
+
+// ================================ library ================================= //
+
+# include <fstream>
+# include <sstream>
+# include <string>
+# include <iostream>
 
 // ================================= class ================================== //
 
