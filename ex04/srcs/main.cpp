@@ -6,11 +6,11 @@
 /*   By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/10 08:52:09 by mmizuno           #+#    #+#             */
-/*   Updated: 2022/04/12 02:23:51 by mmizuno          ###   ########.fr       */
+/*   Updated: 2022/04/12 04:28:46 by mmizuno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../incs/relpace.hpp"
+#include "../incs/Relpace.hpp"
 
 int	main(int argc, const char **argv)
 {

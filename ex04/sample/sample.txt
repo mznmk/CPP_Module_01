@@ -1,5 +1,5 @@
-42 is a private, nonprofit and tuition-free computer science school created and funded by French billionaire Xavier Niel (founder of the telecommunication company Iliad) with several partners including Nicolas Sadirac (previous director-general of the Epitech school in France),[1] Kwame Yamgnane and Florian Bucher (former executives of Epitech).
-[2] The school was first opened in Paris in 2013.
+42 is a private, nonprofit and tuition-free computer science school created and funded by French billionaire Xavier Niel (founder of the telecommunication company Iliad) with several partners including Nicolas Sadirac (previous director-general of the Epitech school in France),[1] Kwame Yamgnane and Florian Bucher (former executives of Epitech). [2]
+The school was first opened in Paris in 2013.
 
 42 is a future-proof computer science training to educate the next generation of software engineers.
 
