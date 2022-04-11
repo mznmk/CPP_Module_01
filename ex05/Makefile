@@ -1,0 +1,107 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/04/08 23:32:38 by mmizuno           #+#    #+#              #
+#    Updated: 2022/04/12 05:39:31 by mmizuno          ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+# ================================= Variable ================================= #
+
+NAME				= harl
+
+INC_DIR				= ./incs/
+SRC_DIR				= ./srcs/
+SRC_NAME			= Harl.cpp \
+					  main.cpp
+SRCS				= $(addprefix $(SRC_DIR), $(SRC_NAME))
+OBJS				= $(SRCS:.cpp=.o)					  
+
+CC					= clang++
+CFLAGS				= -Wall -Wextra -Werror -std=c++98
+ifdef CHECKLEAK
+	CFLAGS			+= -g -fsanitize=leak
+else ifdef CHECKADDRESS
+	CFLAGS			+= -g -fsanitize=address
+endif
+INCDIR				= -I $(INC_DIR)
+
+RM					= rm -f
+
+# ----------------------------- Escape Character ----------------------------- #
+
+ESC_RESET			= \033[0m
+FNT_BOLD			= \033[1m
+FNT_FINE			= \033[2m
+FNT_ITALIC			= \033[3m
+FNT_ULINE			= \033[4m
+CLR_BLACK			= \033[38;5;00m
+CLR_RED				= \033[38;5;01m
+CLR_GREEN			= \033[38;5;02m
+CLR_YELLOW			= \033[38;5;03m
+CLR_BLUE			= \033[38;5;04m
+CLR_MAGENTA			= \033[38;5;05m
+CLR_CYAN			= \033[38;5;06m
+CLR_WHITE			= \033[38;5;07m
+
+# ================================== Rules =================================== #
+
+# ---------------------------------- .c.o ------------------------------------ #
+
+.cpp.o:
+					$(CC) $(CFLAGS) $(INCDIR) -c $< -o $(<:.cpp=.o)
+
+# ------------------------------ $(NAME) / all ------------------------------- #
+
+$(NAME):			$(OBJS)
+					@echo "$(FNT_BOLD)$(CLR_CYAN)[ $(NAME) is compiling ... ]$(ESC_RESET)"
+					$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+					@echo "$(FNT_BOLD)$(CLR_YELLOW)[ $(NAME) successfully compiled !! ]$(ESC_RESET)"
+
+all:				$(NAME)
+
+leak:
+					@make CHECKLEAK=1
+					@echo "$(FNT_BOLD)$(CLR_GREEN)[ memory leak check mode : ON ]$(ESC_RESET)"
+
+address:
+					@make CHECKADDRESS=1
+					@echo "$(FNT_BOLD)$(CLR_GREEN)[ memory address check mode : ON ]$(ESC_RESET)"
+
+# ------------------------------ clean / fclean ------------------------------ #
+
+clean:
+					$(RM) $(OBJS)
+
+fclean:				clean
+					$(RM) $(NAME)
+
+# ------------------------------------ re ------------------------------------ #
+
+re:					fclean all
+
+# ----------------------------------- test ------------------------------------ #
+
+test:
+					@echo "$(FNT_BOLD)$(CLR_MAGENTA)[OK 4 pattern]$(ESC_RESET)"
+					-@./harl DEBUG
+					-@./harl INFO
+					-@./harl WARNING
+					-@./harl ERROR
+					@echo "$(FNT_BOLD)$(CLR_MAGENTA)[NG 8 pattern]$(ESC_RESET)"
+					-@./harl
+					-@./harl DEBUG DEBUG
+					-@./harl debug
+					-@./harl info
+					-@./harl warning
+					-@./harl error
+					-@./harl ABCDEFG
+					-@./harl DEBUGdebug
+
+# ---------------------------------- .PHONY ---------------------------------- #
+
+.PHONY:				all clean fclean re test
