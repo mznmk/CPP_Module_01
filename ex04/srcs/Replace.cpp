@@ -6,7 +6,7 @@
 /*   By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/10 08:52:15 by mmizuno           #+#    #+#             */
-/*   Updated: 2022/04/12 04:28:55 by mmizuno          ###   ########.fr       */
+/*   Updated: 2022/04/12 14:11:40 by mmizuno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,13 @@ Replace::~Replace()
 */
 void    Replace::_replace(std::string &buff)
 {
+    // [ avoid error ]
+    if (_s1.empty())
+        return;
+    if (_s1 == _s2)
+        return;
+
+    // [ replace word ]
     while (42) {
         std::size_t pos = buff.find(_s1);
         if (pos == std::string::npos) {
@@ -66,8 +73,9 @@ void    Replace::replace()
     while (std::getline(ifs, buff))
     {
         _replace(buff);
-        stream << buff << std::endl;
+        stream << buff << "\n";
     }
+    stream.flush();
     ifs.close();
 
     // [ write stream ]
