@@ -6,7 +6,7 @@
 #    By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/08 23:32:38 by mmizuno           #+#    #+#              #
-#    Updated: 2022/04/12 06:30:37 by mmizuno          ###   ########.fr        #
+#    Updated: 2022/04/12 14:18:18 by mmizuno          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,12 +65,14 @@ $(NAME):			$(OBJS)
 all:				$(NAME)
 
 leak:
-					@make CHECKLEAK=1
 					@echo "$(FNT_BOLD)$(CLR_GREEN)[ memory leak check mode : ON ]$(ESC_RESET)"
+					@make fclean
+					@make CHECKLEAK=1
 
 address:
-					@make CHECKADDRESS=1
 					@echo "$(FNT_BOLD)$(CLR_GREEN)[ memory address check mode : ON ]$(ESC_RESET)"
+					@make fclean
+					@make CHECKADDRESS=1
 
 # ------------------------------ clean / fclean ------------------------------ #
 
@@ -102,4 +104,4 @@ test:
 
 # ---------------------------------- .PHONY ---------------------------------- #
 
-.PHONY:				all clean fclean re test
+.PHONY:				all leak address clean fclean re test

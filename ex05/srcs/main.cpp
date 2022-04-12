@@ -6,7 +6,7 @@
 /*   By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 03:19:03 by mmizuno           #+#    #+#             */
-/*   Updated: 2022/04/12 06:34:09 by mmizuno          ###   ########.fr       */
+/*   Updated: 2022/04/12 14:59:59 by mmizuno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,35 +26,25 @@ int main(int argc, char **argv)
             "ERROR"
         };
 
-        // [ execute command ]
-        srand(time(NULL));
-        // // static
-        // Harl harl;
+        // // [ print message (static) ]
+        // srand(time(NULL));
+        // Harl hs;
         // for (int i = 0; i < 10; i++) {
-        //     std::string level = levels[rand() % 4];
-        //     std::cout << CLR_YELLOW
-        //               << "[ " << level << " ]"
-        //               << ESC_RESET << std::endl;
-        //     harl.complain(level);
+        //     hs.complain(levels[rand() % LEVEL_COUNT]);
         // }
-        // dynamic
+
+        // [ print message (dynamic) ]
+        srand(time(NULL));
         for (int i = 0; i < 10; i++) {
             Harl *hd = new Harl;
-            std::string level = levels[rand() % 4];
-            std::cout << CLR_YELLOW
-                    << "[ " << level << " ]"
-                    << ESC_RESET << std::endl;
-            hd->complain(level);
+            hd->complain(levels[rand() % LEVEL_COUNT]);
             delete hd;
         }
     }
     else if (argc == 2)
     {
-        // [ execute command ]
+        // [ print message (static) ]
         Harl h;
-        std::cout << CLR_YELLOW
-                  << "[ " << argv[1] << " ]"
-                  << ESC_RESET << std::endl;
         h.complain(argv[1]);
     }
     else
@@ -62,9 +52,9 @@ int main(int argc, char **argv)
         std::cout << CLR_RED FNT_BOLD
                   << "USAGE: .harl or ./harl level"
                   << ESC_RESET << std::endl;
-        return (1);
+        return (EXIT_FAILURE);
     }
 
     // [ return ]    
-    return (0);
+    return (EXIT_SUCCESS);
 }
