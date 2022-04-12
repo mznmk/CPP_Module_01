@@ -6,7 +6,7 @@
 /*   By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 09:35:00 by mmizuno           #+#    #+#             */
-/*   Updated: 2022/04/09 12:25:47 by mmizuno          ###   ########.fr       */
+/*   Updated: 2022/04/12 10:08:30 by mmizuno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,14 @@
 */
 Zombie* zombieHorde(int N, std::string name)
 {
-    Zombie  *zombies;
-
     // [ allocate memory ]
-    zombies = new Zombie[N];
+    Zombie *zombies = new (std::nothrow) Zombie[N];
+    if (!zombies) {
+        std::cerr << FNT_BOLD CLR_RED
+                  << "ERROR: memory allocate failure"
+                  << ESC_RESET << std::endl;
+        return (zombies);
+    }
     for (int i = 0; i < N; i++) {
         zombies[i].setName(name);
     }
