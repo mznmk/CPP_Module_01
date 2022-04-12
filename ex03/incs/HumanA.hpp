@@ -6,7 +6,7 @@
 /*   By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 14:51:24 by mmizuno           #+#    #+#             */
-/*   Updated: 2022/04/09 17:44:22 by mmizuno          ###   ########.fr       */
+/*   Updated: 2022/04/12 11:12:37 by mmizuno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ class HumanA
         ~HumanA();
         // [ method ]
         void        attack();
-        // [ setter / getter ]
  };
 
 #endif

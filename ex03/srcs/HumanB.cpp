@@ -6,7 +6,7 @@
 /*   By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 14:48:44 by mmizuno           #+#    #+#             */
-/*   Updated: 2022/04/10 20:17:58 by mmizuno          ###   ########.fr       */
+/*   Updated: 2022/04/12 11:37:37 by mmizuno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 
 HumanB::HumanB(std::string name)
 {
-    HumanB::_name = name;
-    HumanB::_weapon = NULL;
+    _name = name;
+    _weapon = NULL;
 }
 
 HumanB::~HumanB()
@@ -29,12 +29,12 @@ HumanB::~HumanB()
 
 void    HumanB::attack()
 {
-    std::cout << HumanB::_name;
+    std::cout << _name;
     std::cout << " attacks with their ";
-    if (!HumanB::_weapon)
+    if (!_weapon)
         std::cout << "hand... (T T)";
     else
-        std::cout << (*HumanB::_weapon).getType();
+        std::cout << (*_weapon).getType();
     std::cout << std::endl;
 }
 
@@ -42,5 +42,5 @@ void    HumanB::attack()
 
 void    HumanB::setWeapon(Weapon &weapon)
 {
-    HumanB::_weapon = &weapon;
+    _weapon = &weapon;
 }
