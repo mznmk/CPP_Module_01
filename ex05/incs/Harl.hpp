@@ -6,7 +6,7 @@
 /*   By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 03:19:10 by mmizuno           #+#    #+#             */
-/*   Updated: 2022/04/12 14:54:19 by mmizuno          ###   ########.fr       */
+/*   Updated: 2022/04/12 16:25:31 by mmizuno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@
 
 # define LEVEL_COUNT    4
 
-# define MSG_DEBUG      "I love having extra bacon for my 7XL-double-cheese-triple-pickle-special-ketchup burger.\nI really do!"
-# define MSG_INFO       "I cannot believe adding extra bacon costs more money.\nYou didn't put enough bacon in my burger!\nIf you did, I wouldn't be asking for more!"
-# define MSG_WARNING    "I think I deserve to have some extra bacon for free.\nI've been coming for years whereas you started working here since last month."
-# define MSG_ERROR      "This is unacceptable!\nI want to speak to the manager now."
+# define MSG_DEBUG      "I love having extra bacon for my 7XL-double-cheese-triple-pickle-special-ketchup burger.\nI really do!\n"
+# define MSG_INFO       "I cannot believe adding extra bacon costs more money.\nYou didn't put enough bacon in my burger!\nIf you did, I wouldn't be asking for more!\n"
+# define MSG_WARNING    "I think I deserve to have some extra bacon for free.\nI've been coming for years whereas you started working here since last month.\n"
+# define MSG_ERROR      "This is unacceptable!\nI want to speak to the manager now.\n"
 
 // --------------------------------- color ---------------------------------- //
 
