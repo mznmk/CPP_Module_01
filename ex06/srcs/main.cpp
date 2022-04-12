@@ -6,12 +6,11 @@
 /*   By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 03:19:03 by mmizuno           #+#    #+#             */
-/*   Updated: 2022/04/12 09:00:20 by mmizuno          ###   ########.fr       */
+/*   Updated: 2022/04/12 16:24:20 by mmizuno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../incs/HarlFilter.hpp"
-#include <stdlib.h>
+#include "../incs/Harl.hpp"
 
 int main(int argc, char **argv)
 {
@@ -25,11 +24,11 @@ int main(int argc, char **argv)
     }
 
     // // [ execute command (static) ]
-    // HarlFilter hs;
+    // Harl hs;
     // hs.complain(argv[1]);
     
     // [ execute command (dynamic) ]
-    HarlFilter *hd = new HarlFilter;
+    Harl *hd = new Harl;
     hd->complain(argv[1]);
     delete hd;
 

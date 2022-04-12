@@ -6,7 +6,7 @@
 #    By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/08 23:32:38 by mmizuno           #+#    #+#              #
-#    Updated: 2022/04/12 09:04:28 by mmizuno          ###   ########.fr        #
+#    Updated: 2022/04/12 15:44:35 by mmizuno          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ NAME				= harlFilter
 
 INC_DIR				= ./incs/
 SRC_DIR				= ./srcs/
-SRC_NAME			= HarlFilter.cpp \
+SRC_NAME			= Harl.cpp \
 					  main.cpp
 SRCS				= $(addprefix $(SRC_DIR), $(SRC_NAME))
 OBJS				= $(SRCS:.cpp=.o)					  

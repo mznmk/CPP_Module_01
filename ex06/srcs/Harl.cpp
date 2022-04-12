@@ -10,16 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../incs/HarlFilter.hpp"
+#include "../incs/Harl.hpp"
 
 // ======================== constructor / destructor ======================== //
 
-HarlFilter::HarlFilter()
+Harl::Harl()
 {
 
 }
 
-HarlFilter::~HarlFilter()
+Harl::~Harl()
 {
 
 }
@@ -31,10 +31,10 @@ HarlFilter::~HarlFilter()
 ** @param   level   log level
 ** @return  none
 */
-void	HarlFilter::_debug(std::string level)
+void	Harl::debug(void)
 {
     std::cout << FNT_BOLD CLR_YELLOW
-              << "[ " << level << " ]\n"
+              << "[ DEBUG ]\n"
               << ESC_RESET
               << MSG_DEBUG
               << std::endl;
@@ -45,10 +45,10 @@ void	HarlFilter::_debug(std::string level)
 ** @param   level   log level
 ** @return  none
 */
-void	HarlFilter::_info(std::string level)
+void	Harl::info(void)
 {
-    std::cout << FNT_BOLD CLR_YELLOW
-              << "[ " << level << " ]\n"
+    std::cout << CLR_YELLOW
+              << "[ INFO ]\n"
               << ESC_RESET
               << MSG_INFO
               << std::endl;
@@ -59,10 +59,10 @@ void	HarlFilter::_info(std::string level)
 ** @param   level   log level
 ** @return  none
 */
-void	HarlFilter::_warning(std::string level)
+void	Harl::warning(void)
 {
-    std::cout << FNT_BOLD CLR_YELLOW
-              << "[ " << level << " ]\n"
+    std::cout << CLR_YELLOW
+             << "[ WARNING ]\n"
               << ESC_RESET
               << MSG_WARNING
               << std::endl;
@@ -73,10 +73,10 @@ void	HarlFilter::_warning(std::string level)
 ** @param   level   log level
 ** @return  none
 */
-void	HarlFilter::_error(std::string level)
+void	Harl::error(void)
 {
-    std::cout << FNT_BOLD CLR_YELLOW
-              << "[ " << level << " ]\n"
+    std::cout << CLR_YELLOW
+              << "[ ERROR ]\n"
               << ESC_RESET
               << MSG_ERROR
               << std::endl;
@@ -86,9 +86,9 @@ void	HarlFilter::_error(std::string level)
 ** @brief   print message (log level: not found)
 ** @return  none
 */
-void    HarlFilter::_notFound(void)
+void    Harl::notFound(void)
 {
-    std::cout << FNT_BOLD CLR_YELLOW
+    std::cout << CLR_YELLOW
               << "[ " << LEV_NOTFOUND << " ]"
               << ESC_RESET
               << std::endl;
@@ -99,7 +99,7 @@ void    HarlFilter::_notFound(void)
 ** @param   level   print message form this level and above
 ** @return  none
 */
-void	HarlFilter::complain(std::string level)
+void	Harl::complain(std::string level)
 {
     // [ variable ]
     std::string levels[] = {
@@ -114,11 +114,11 @@ void	HarlFilter::complain(std::string level)
         true,
         true
     };
-    void (HarlFilter::*funcs[])(std::string) = {
-        &HarlFilter::_debug,
-        &HarlFilter::_info,
-        &HarlFilter::_warning,
-        &HarlFilter::_error
+    void (Harl::*funcs[])() = {
+        &Harl::debug,
+        &Harl::info,
+        &Harl::warning,
+        &Harl::error
     };
 
     // [ execute command ]
@@ -133,11 +133,11 @@ void	HarlFilter::complain(std::string level)
     int exec_count = 0;
     for (int i = 0; i < LEVEL_COUNT; i++) {
         if (filter[i]) {
-            (this->*funcs[i])(levels[i]);
+            (this->*funcs[i])();
             exec_count++;
         }
     }
     if (exec_count == 0) {
-        _notFound();
+        notFound();
     }
 }

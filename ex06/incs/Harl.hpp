@@ -47,19 +47,19 @@
 
 // ================================= class ================================== //
 
-class HarlFilter
+class Harl
 {
     private:
         // [ method ]
-        void    _debug(std::string level);
-        void    _info(std::string level);
-        void    _warning(std::string level);
-        void    _error(std::string level);
-        void    _notFound(void);
+        void    debug(void);
+        void    info(void);
+        void    warning(void);
+        void    error(void);
+        void    notFound(void);
     public:
         // [ constructor / destructor ]
-        HarlFilter();
-        ~HarlFilter();
+        Harl();
+        ~Harl();
         // [ method ]
         void    complain(std::string level);
 };
