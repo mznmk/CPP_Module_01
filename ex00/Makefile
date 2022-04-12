@@ -6,7 +6,7 @@
 #    By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/08 23:32:38 by mmizuno           #+#    #+#              #
-#    Updated: 2022/04/12 09:18:56 by mmizuno          ###   ########.fr        #
+#    Updated: 2022/04/12 10:30:37 by mmizuno          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -90,4 +90,4 @@ re:					fclean all
 
 # ---------------------------------- .PHONY ---------------------------------- #
 
-.PHONY:				all clean fclean re
+.PHONY:				all leak address clean fclean re
