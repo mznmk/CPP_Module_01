@@ -6,7 +6,7 @@
 #    By: mmizuno <mmizuno@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/08 23:32:38 by mmizuno           #+#    #+#              #
-#    Updated: 2022/04/12 09:31:45 by mmizuno          ###   ########.fr        #
+#    Updated: 2022/04/12 10:56:39 by mmizuno          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ NAME				= zombieHorde
 INC_DIR				= ./incs/
 SRC_DIR				= ./srcs/
 SRC_NAME			= Zombie.cpp \
-					  ZombieHorde.cpp \
+					  zombieHorde.cpp \
 					  main.cpp
 SRCS				= $(addprefix $(SRC_DIR), $(SRC_NAME))
 OBJS				= $(SRCS:.cpp=.o)					  
@@ -74,6 +74,7 @@ address:
 					@echo "$(FNT_BOLD)$(CLR_GREEN)[ memory address check mode : ON ]$(ESC_RESET)"
 					@make fclean
 					@make CHECKADDRESS=1
+
 # ------------------------------ clean / fclean ------------------------------ #
 
 clean:
@@ -88,4 +89,4 @@ re:					fclean all
 
 # ---------------------------------- .PHONY ---------------------------------- #
 
-.PHONY:				all clean fclean re
+.PHONY:				all leak address clean fclean re
